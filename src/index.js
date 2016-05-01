@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader'
 
 require('./stylesheets/main.sass')
 
-ReactDOM.render(<AppContainer component={App} />, document.getElementById('root'))
+ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('root'))
 
 if (module.hot) {
 	module.hot.accept('./components/app', () => {
