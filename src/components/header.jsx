@@ -6,9 +6,17 @@ class Header extends React.Component {
         this.displayName = 'Header'
     }
     render() {
-        return <div className="header">
-        	Header
-        </div>
+        return <header className="header">
+        	<div className="logo">
+	        	<a href="https://www.freecodecamp.com">
+	        		<img src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg"/>
+	        	</a>
+        	</div>
+        	<div className="title">
+        		Happy Campers
+        	</div>
+        	<div style={{width: 280}}></div>
+        </header>
     }
 }
 

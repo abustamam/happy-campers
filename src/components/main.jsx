@@ -1,16 +1,16 @@
 import React from 'react'
 import request from 'superagent'
 
-class Table extends React.Component {
+class Main extends React.Component {
     constructor(props) {
         super(props);
-        this.displayName = 'Table';
+        this.displayName = 'Main';
     }
     render() {
-        return <div className="table">
-        	Table
+        return <div className="main">
+        	Main
         </div>;
     }
 }
 
-export default Table
+export default Main
