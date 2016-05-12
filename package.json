@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
+  "name": "happy-campers",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Free Code Camp Leaderboard",
   "scripts": {
     "start": "webpack-dev-server",
     "lint": "eslint src",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/abustamam/react-hot-boilerplate.git"
+    "url": "https://github.com/abustamam/happy-campers.git"
   },
   "keywords": [
     "react",
@@ -18,7 +18,7 @@
   ],
   "author": "Rasheed Bustamam <rasheed.bustamam@gmail.com> (http://github.com/abustamam)",
   "license": "MIT",
-  "homepage": "https://github.com/abustamam/react-boilerplate",
+  "homepage": "https://github.com/abustamam/happy-campers",
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
@@ -40,6 +40,7 @@
     "less": "^2.6.1",
     "less-loader": "^2.2.3",
     "lodash": "^4.11.1",
+    "moment": "^2.13.0",
     "node-sass": "^3.4.2",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
