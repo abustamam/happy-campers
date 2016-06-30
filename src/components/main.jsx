@@ -9,18 +9,23 @@ class Main extends React.Component {
         super(props)
         this.displayName = 'Main'
         this.state = {
-        	sortBy: 'username'
+        	sortBy: 'username',
+            type: 'allTime'
+        }
+        this.urls = {
+            recent: 'https://fcctop100.herokuapp.com/api/fccusers/top/recent',
+            allTime: 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'
         }
     }
 
-    getResults(url, cb) {
+    getResults(type) {
     	request
-    		.get(url)
-    		.end(function(err, res){
+    		.get(this.urls[type])
+    		.end((err, res) => {
     			if (err || !res.ok) {
     				alert('Oh no! error');
     			} else {
-    				cb(res.body)
+                    this.setState({userList: res.body})
     			}
     		})
     }
@@ -29,28 +34,34 @@ class Main extends React.Component {
         
     }
 
+    // alltime
+    // img
+    // lastUpdate
+    // recent
+    // username
+
+    handleClick(type) {
+        if (type === this.state.type) {
+
+        } else {
+            this.setState({type, sortBy: 'username', desc: true})
+            this.getResults(type)
+        }
+    }
+
     componentDidMount() {
-    	// urls
-    	// https://fcctop100.herokuapp.com/api/fccusers/top/recent
-    	// https://fcctop100.herokuapp.com/api/fccusers/top/alltime
-
-    	const recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
-    	const allTimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'
-
-    	this.getResults(recentUrl, (res) => this.setState({recents: res}))
-    	this.getResults(allTimeUrl, (res) => this.setState({allTimes: res}))
+    	this.getResults()
     }
 
     render() {
-
         return <div className="main">
         	<div className="user-row user-header">
         		<div className="user-cell">Username</div>
-        		<div className="user-cell">All-Time points</div>
-        		<div className="user-cell">Points in last 30 days</div>
+        		<div className="user-cell" onClick={()=>{this.handleClick('allTime')}}>All-Time points</div>
+        		<div className="user-cell" onClick={()=>{this.handleClick('recent')}}>Points in last 30 days</div>
         		<div className="user-cell">Last Updated</div>
         	</div>
-        	{_.map(this.state.recents, (user) => {
+        	{_.map(this.state.userList, (user) => {
         		return (<UserRow key={user.username} user={user}/>)
         	})}
         </div>;
