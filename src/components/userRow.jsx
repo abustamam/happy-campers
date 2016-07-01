@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import moment from 'moment'
 
 class UserRow extends React.Component {
     constructor(props) {
@@ -7,23 +8,17 @@ class UserRow extends React.Component {
         this.state = {}
     }
     render() {
-    	const user = this.props.user
-
-    	// alltime
-		// img
-		// lastUpdate
-		// recent
-		// username
-
+    	const { user } = this.props 
+        const { username, alltime, recent, lastUpdate } = user
 
         return <div className="user-row">
         	<div className="user-cell username">
                 <div className="image"><img src={user.img}/></div>
-        		{user.username}
+        		{username}
         	</div>
-        	<div className="user-cell">{user.alltime}</div>
-        	<div className="user-cell">{user.recent}</div>
-        	<div className="user-cell">{user.lastUpdate}</div>
+        	<div className="user-cell">{alltime}</div>
+        	<div className="user-cell">{recent}</div>
+        	<div className="user-cell">{moment(lastUpdate).format('lll')}</div>
         </div>;
     }
 }
