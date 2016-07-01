@@ -1,17 +1,26 @@
-This is the boilerplate from which I will create basic React projects. Intended for use of 
-Free Code Campers, but of course anyone is free to use it.
+# Happy Campers! 
 
-Originally forked from Dan Abramov's [React Hot Boilerplate](https://github.com/gaearon/react-hot-boilerplate)
-but used some instructions from the book [SurviveJS](http://survivejs.com) to get it to deploy properly.
+This is the second project for Free Code Camp's React/Sass projects. 
 
 ## Features
 
-- Hot reloading
-- Github pages deployment
-- Sass
-- Lean 
+- Sort by different categories
+- Get top points by all time or by recent
+- Cool SVG icons :) 
 
 ## Instructions for use
+
+### Quick and Easy Way:
+
+https://abustamam.github.io/happy-campers
+
+### The hard way
+
+- Clone repo:
+
+```
+git clone git@github.com:abustamam/happy-campers.git
+```
 
 - Install dependencies:
 
@@ -30,7 +39,6 @@ npm start
 - To deploy to github, fork your own, then run:
 
 ```
-npm run build
 npm run deploy
 ```
 
