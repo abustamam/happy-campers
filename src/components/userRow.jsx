@@ -23,4 +23,4 @@ class UserRow extends React.Component {
     }
 }
 
-export default UserRow;
+export default UserRow
